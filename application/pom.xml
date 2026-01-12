@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Referencia al proyecto padre -->
+    <parent>
+        <groupId>com.example.onion</groupId>
+        <artifactId>onion-architecture-example</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <!-- Coordenadas Maven para este módulo -->
+    <artifactId>application</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Application Layer</name>
+    <description>
+        Contiene los casos de uso de la aplicación y las interfaces de los repositorios.
+        Depende únicamente de la capa de dominio.
+    </description>
+
+    <dependencies>
+        <!-- Dependencia con el módulo de dominio -->
+        <dependency>
+            <groupId>com.example.onion</groupId>
+            <artifactId>domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Spring Boot Starter: proporciona funcionalidades básicas de Spring y DI -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Spring Data JPA para la interfaz del repositorio -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Lombok para reducir el código repetitivo -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>

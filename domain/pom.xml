@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Referencia al proyecto padre -->
+    <parent>
+        <groupId>com.example.onion</groupId>
+        <artifactId>onion-architecture-example</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <!-- Coordenadas Maven para este módulo -->
+    <artifactId>domain</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Domain Layer</name>
+    <description>
+        El núcleo de la cebolla. Contiene las entidades, objetos de valor y reglas de negocio.
+        No tiene dependencias externas, salvo las API estándar para la persistencia.
+    </description>
+
+    <dependencies>
+        <!--
+            Jakarta Persistence API. Es una especificación (API), no una implementación.
+            Permite anotar nuestras entidades de dominio sin acoplarnos a un proveedor de JPA específico.
+            Es un compromiso pragmático en la arquitectura onion.
+        -->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+        </dependency>
+
+        <!-- Lombok para reducir el código repetitivo (getters, setters, constructores) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Coordenadas Maven para el proyecto padre -->
+    <groupId>com.example.onion</groupId>
+    <artifactId>onion-architecture-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.3</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <name>Onion Architecture DDD Example</name>
+    <description>
+        Proyecto de ejemplo para demostrar la Arquitectura Cebolla con principios de DDD.
+    </description>
+
+    <!--
+        Definimos los módulos que componen nuestro proyecto.
+        Maven los buscará en las subcarpetas con estos nombres.
+    -->
+    <modules>
+        <module>domain</module>
+        <module>application</module>
+        <module>infrastructure</module>
+    </modules>
+
+    <properties>
+        <!-- Codificación del proyecto -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Versión de Java (21, como solicitaste) -->
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <org.projectlombok.version>1.18.30</org.projectlombok.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${org.projectlombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
